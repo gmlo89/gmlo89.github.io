@@ -1,29 +1,15 @@
-# gmlo89
+# gmlo89.github.io
 
-This template should help get you started developing with Vue 3 in Vite.
+Personal site of Giovanni López — Software Engineer & Consultant (Laravel & Vue).
 
-## Recommended IDE Setup
+Live at **https://gmlo89.github.io**
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.vscode-typescript-vue-plugin).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
+Built with Vue 3, Vite and Tailwind CSS. All the copy lives in [`src/data/content.js`](src/data/content.js).
 
 ```sh
 npm install
+npm run dev      # local development
+npm run build    # production build in dist/
 ```
 
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+Every push to `main` is built and deployed to GitHub Pages by [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml).

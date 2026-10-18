@@ -1,26 +1,21 @@
 <script setup>
-import PersonalInfo from "./components/PersonalInfo.vue";
-import BottomNav from "./components/BottomNav.vue";
-import Skills from "./components/Skills.vue";
-import Tools from "./components/Tools.vue";
+import HeroSection from './components/HeroSection.vue'
+import ServicesSection from './components/ServicesSection.vue'
+import WorkSection from './components/WorkSection.vue'
+import StackSection from './components/StackSection.vue'
+import OpenSourceSection from './components/OpenSourceSection.vue'
+import ContactSection from './components/ContactSection.vue'
 </script>
 
 <template>
-	<div class="container">
-		<div class="row d-flex align-items-stretch">
-			<header class="col-md-3 d-flex flex-column">
-				<PersonalInfo />
-        <Skills />
-				<BottomNav />
-			</header>
-
-			<main class="col-md-9">
-        <Tools />
-      </main>
-		</div>
-	</div>
+  <div class="mx-auto max-w-5xl px-4 sm:px-6">
+    <HeroSection />
+    <main>
+      <ServicesSection />
+      <WorkSection />
+      <StackSection />
+      <OpenSourceSection />
+    </main>
+    <ContactSection />
+  </div>
 </template>
-
-<style lang="scss">
-@import "./assets/base.scss";
-</style>
