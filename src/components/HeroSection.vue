@@ -1,51 +1,69 @@
 <script setup>
-import { ArrowRight, GraduationCap, Linkedin, MapPin } from 'lucide-vue-next'
-import { links, profile } from '../data/content'
+import { ArrowRight, Clock, MapPin, ReceiptText, ShieldCheck } from 'lucide-vue-next'
+import { profile } from '../data/content'
+import { useLocale } from '../composables/useLocale'
+
+const { t } = useLocale()
+
+const factIcons = [MapPin, Clock, ReceiptText, ShieldCheck]
 </script>
 
 <template>
-  <header class="py-20 sm:py-28">
-    <img
-      :src="profile.avatar"
-      :alt="profile.name"
-      width="96"
-      height="96"
-      class="size-24 rounded-full ring-4 ring-zinc-100 dark:ring-zinc-800"
-    />
-    <p class="mt-8 flex items-center gap-1.5 text-sm text-zinc-500 dark:text-zinc-400">
-      <MapPin class="size-4" /> Based in {{ profile.location }} ·
-      <span class="inline-flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400">
-        <span class="size-2 rounded-full bg-current"></span> Available for freelance projects
-      </span>
-    </p>
-    <h1 class="mt-4 text-4xl font-bold tracking-tight text-zinc-900 sm:text-6xl dark:text-white">
-      {{ profile.name }}
-    </h1>
-    <p class="mt-3 text-xl font-medium text-zinc-600 sm:text-2xl dark:text-zinc-300">
-      {{ profile.title }} · <span class="text-red-600 dark:text-red-400">{{ profile.specialty }}</span>
-    </p>
-    <p class="mt-6 max-w-2xl text-lg leading-relaxed">{{ profile.pitch }}</p>
-    <p class="mt-4 flex items-start gap-2 text-sm text-zinc-500 dark:text-zinc-400">
-      <GraduationCap class="mt-0.5 size-4 shrink-0" />
-      <span>
-        {{ profile.education.degree }} · {{ profile.education.school }} ({{ profile.education.years }})
-      </span>
-    </p>
-    <div class="mt-10 flex flex-wrap gap-3">
-      <a
-        :href="links.email"
-        class="inline-flex items-center gap-2 rounded-lg bg-zinc-900 px-5 py-3 font-semibold text-white transition hover:bg-zinc-700 dark:bg-white dark:text-zinc-900 dark:hover:bg-zinc-200"
+  <section id="top" class="mx-auto grid max-w-6xl items-center gap-12 px-4 py-16 sm:px-6 sm:py-24 lg:grid-cols-[1.25fr_1fr] lg:gap-16">
+    <div>
+      <p
+        class="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-1.5 text-sm font-semibold text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300"
       >
-        Let's talk <ArrowRight class="size-4" />
-      </a>
-      <a
-        :href="links.linkedin"
-        target="_blank"
-        rel="noopener"
-        class="inline-flex items-center gap-2 rounded-lg border border-zinc-300 px-5 py-3 font-semibold text-zinc-900 transition hover:bg-zinc-100 dark:border-zinc-700 dark:text-white dark:hover:bg-zinc-900"
-      >
-        <Linkedin class="size-4" /> LinkedIn
-      </a>
+        <span class="size-2 rounded-full bg-emerald-500 dark:bg-emerald-400"></span> {{ t.hero.available }}
+      </p>
+      <h1 class="mt-6 text-4xl leading-[1.05] font-bold tracking-tight text-balance text-zinc-900 sm:text-6xl dark:text-white">
+        {{ t.hero.headline }}
+      </h1>
+      <p class="mt-6 max-w-xl text-lg leading-relaxed">
+        {{ t.hero.intro[0] }} <strong class="text-zinc-900 dark:text-white">{{ profile.name }}</strong>, {{ t.hero.intro[1] }}
+      </p>
+      <p class="mt-4 max-w-xl text-lg leading-relaxed">
+        {{ t.hero.support[0] }} <strong class="text-zinc-900 dark:text-white">{{ t.hero.support[1] }}</strong>{{ t.hero.support[2] }}
+      </p>
+      <div class="mt-9 flex flex-wrap gap-3">
+        <a
+          href="#contact"
+          class="inline-flex items-center gap-2 rounded-lg bg-zinc-900 px-5 py-3.5 font-semibold text-white transition hover:bg-zinc-700 dark:bg-white dark:text-zinc-900 dark:hover:bg-zinc-200"
+        >
+          {{ t.hero.primaryCta }} <ArrowRight class="size-4" />
+        </a>
+        <a
+          href="#work"
+          class="inline-flex items-center gap-2 rounded-lg border border-zinc-300 px-5 py-3.5 font-semibold text-zinc-900 transition hover:bg-zinc-100 dark:border-zinc-700 dark:text-white dark:hover:bg-zinc-900"
+        >
+          {{ t.hero.secondaryCta }}
+        </a>
+      </div>
     </div>
-  </header>
+
+    <aside class="rounded-3xl border border-zinc-200 bg-zinc-50 p-6 sm:p-7 dark:border-zinc-800 dark:bg-zinc-900">
+      <div class="flex items-center gap-4">
+        <img
+          :src="profile.avatar"
+          :alt="profile.name"
+          width="72"
+          height="72"
+          class="size-18 rounded-full ring-1 ring-zinc-200 ring-offset-2 ring-offset-zinc-50 dark:ring-zinc-700 dark:ring-offset-zinc-900"
+        />
+        <div>
+          <p class="text-lg font-bold text-zinc-900 dark:text-white">{{ profile.name }}</p>
+          <p class="text-sm text-zinc-500 dark:text-zinc-400">{{ t.hero.role }}</p>
+        </div>
+      </div>
+      <ul class="mt-6 space-y-4">
+        <li v-for="(fact, index) in t.hero.facts" :key="fact.title" class="flex gap-3">
+          <component :is="factIcons[index]" class="mt-0.5 size-5 shrink-0 text-red-600 dark:text-red-400" />
+          <span>
+            <span class="block font-semibold text-zinc-900 dark:text-white">{{ fact.title }}</span>
+            <span class="block text-sm text-zinc-500 dark:text-zinc-400">{{ fact.text }}</span>
+          </span>
+        </li>
+      </ul>
+    </aside>
+  </section>
 </template>

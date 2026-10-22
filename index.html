@@ -1,19 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="color-scheme" content="light dark" />
-    <title>Giovanni López · Software Engineer & Consultant</title>
-    <meta name="description" content="Freelance software engineer from Mexico. I build business software with Laravel and Vue: e-invoicing (CFDI/SAT), healthcare systems and multi-tenant SaaS." />
+    <title>Giovanni López · Ingeniero de software en La Paz, BCS</title>
+    <meta name="description" content="Ingeniero de software en La Paz, Baja California Sur. Desde 2010 desarrollo sistemas a la medida para empresas, hospitales y laboratorios: ERPs, expediente clínico, facturación CFDI 4.0 y SaaS." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://gmlo89.github.io/" />
-    <meta property="og:title" content="Giovanni López · Software Engineer & Consultant" />
-    <meta property="og:description" content="I build business software with Laravel and Vue: e-invoicing (CFDI/SAT), healthcare systems and multi-tenant SaaS." />
+    <meta property="og:title" content="Giovanni López · Ingeniero de software en La Paz, BCS" />
+    <meta property="og:description" content="Desde 2010 desarrollo sistemas a la medida para empresas, hospitales y laboratorios: ERPs, expediente clínico, facturación CFDI 4.0 y SaaS." />
     <meta property="og:image" content="https://avatars.githubusercontent.com/u/874420?v=4" />
+    <meta property="og:locale" content="es_MX" />
+    <meta property="og:locale:alternate" content="en_US" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@gmlo_89" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" />
+    <script>
+      // Apply the saved theme before the app mounts to avoid a flash (see src/composables/useTheme.js).
+      try {
+        const theme = localStorage.getItem('theme')
+        if (theme === 'dark' || (theme !== 'light' && matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark')
+        }
+      } catch {}
+    </script>
   </head>
   <body>
     <div id="app"></div>

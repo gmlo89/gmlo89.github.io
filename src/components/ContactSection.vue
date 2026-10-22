@@ -1,6 +1,9 @@
 <script setup>
 import { Github, Linkedin, Mail, Twitter } from 'lucide-vue-next'
 import { links, profile } from '../data/content'
+import { useLocale } from '../composables/useLocale'
+
+const { t } = useLocale()
 
 const socials = [
   { label: 'LinkedIn', href: links.linkedin, icon: Linkedin },
@@ -10,15 +13,13 @@ const socials = [
 </script>
 
 <template>
-  <footer id="contact" class="py-16">
-    <div class="rounded-3xl bg-zinc-900 px-6 py-12 text-center sm:px-12 dark:border dark:border-zinc-800">
-      <h2 class="text-3xl font-bold tracking-tight text-white">Have a project in mind?</h2>
-      <p class="mx-auto mt-4 max-w-xl text-zinc-300">
-        Tell me what you need to build or fix. I'll reply with questions, a plan and an estimate.
-      </p>
+  <footer id="contact" class="mx-auto max-w-6xl px-4 pt-6 pb-14 sm:px-6">
+    <div class="rounded-3xl bg-zinc-900 px-6 py-14 text-center sm:px-12 sm:py-18 dark:border dark:border-zinc-800">
+      <h2 class="text-3xl font-bold tracking-tight text-white sm:text-5xl">{{ t.contact.title }}</h2>
+      <p class="mx-auto mt-4 max-w-xl text-lg text-zinc-300">{{ t.contact.text }}</p>
       <a
         :href="links.email"
-        class="mt-8 inline-flex items-center gap-2 rounded-lg bg-white px-5 py-3 font-semibold text-zinc-900 transition hover:bg-zinc-200"
+        class="mt-8 inline-flex items-center gap-2 rounded-xl bg-red-600 px-6 py-3.5 font-semibold text-white transition hover:bg-red-700 dark:bg-red-500 dark:text-zinc-950 dark:hover:bg-red-400"
       >
         <Mail class="size-4" /> {{ links.emailLabel }}
       </a>
@@ -30,6 +31,8 @@ const socials = [
         </li>
       </ul>
     </div>
-    <p class="mt-8 text-center text-sm text-zinc-500">© {{ new Date().getFullYear() }} {{ profile.name }}</p>
+    <p class="mt-8 text-center text-sm text-zinc-500">
+      © {{ new Date().getFullYear() }} {{ profile.name }} · {{ t.contact.location }}
+    </p>
   </footer>
 </template>

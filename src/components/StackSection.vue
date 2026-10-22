@@ -1,14 +1,17 @@
 <script setup>
 import SectionHeading from './SectionHeading.vue'
 import { stack } from '../data/content'
+import { useLocale } from '../composables/useLocale'
+
+const { t } = useLocale()
 </script>
 
 <template>
-  <section id="stack" class="py-16">
-    <SectionHeading eyebrow="Tech stack" title="Tools I work with every day" />
+  <section id="stack" class="mx-auto max-w-6xl px-4 pt-20 pb-10 sm:px-6 sm:pt-24">
+    <SectionHeading :eyebrow="t.stack.eyebrow" :title="t.stack.title" />
     <dl class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-      <div v-for="category in stack" :key="category.group">
-        <dt class="font-semibold text-zinc-900 dark:text-white">{{ category.group }}</dt>
+      <div v-for="category in stack" :key="category.id">
+        <dt class="font-semibold text-zinc-900 dark:text-white">{{ t.stack.groups[category.id] }}</dt>
         <dd class="mt-3 flex flex-wrap gap-2">
           <span
             v-for="item in category.items"
