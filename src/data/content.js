@@ -35,6 +35,7 @@ export const projects = [
   { id: 'lab-network', tags: ['Laravel', 'Inertia', 'Vue 3', 'TypeScript', 'Expo'] },
   { id: 'invoicing-saas', tags: ['Laravel 13', 'Inertia 3', 'Multi-tenancy', 'CFDI', 'Stripe'] },
   { id: 'pawn-shop', tags: ['Laravel', 'MySQL', 'Real-time'] },
+  { id: 'campaign', tags: ['Laravel', 'Vue', 'Pusher', 'Laravel Echo', 'Redis', 'SMS'] },
 ]
 
 export const stack = [
@@ -188,6 +189,13 @@ export const messages = {
           title: 'Sistema para casa de empeño',
           problem: 'Una cadena de casas de empeño con sucursales en varios estados necesitaba un solo sistema para todas.',
           solution: 'Boletas de empeño, remates, punto de venta, cajas y cortes, gastos y reportes consolidados de todas las sucursales.',
+        },
+        campaign: {
+          category: 'Política · Campaña electoral',
+          title: 'Sistema para campaña electoral',
+          problem: 'Una campaña electoral necesitaba organizar a su equipo en territorio y dar seguimiento a miles de registros.',
+          solution:
+            'Plataforma para administrar miles de registros organizados por zona, encuestas, metas con avance y un tablero para el día de la elección con notificaciones en tiempo real y envío de SMS.',
         },
       },
     },
@@ -385,6 +393,13 @@ export const messages = {
           title: 'Pawn shop management system',
           problem: 'A pawn shop chain with branches in several Mexican states needed one system for every location.',
           solution: 'Pawn tickets, auctions, point of sale, cashboxes and closures, expenses and consolidated reports across all branches.',
+        },
+        campaign: {
+          category: 'Politics · Electoral campaign',
+          title: 'Electoral campaign system',
+          problem: 'An electoral campaign needed to organize its field team and keep track of thousands of records.',
+          solution:
+            'Platform to manage thousands of records organized by zone, surveys, goals with progress tracking and an election-day dashboard with real-time notifications and SMS messaging.',
         },
       },
     },
