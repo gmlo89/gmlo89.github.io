@@ -139,8 +139,8 @@ export const messages = {
     },
     work: {
       eyebrow: 'Proyectos',
-      title: 'Proyectos que he entregado',
-      showAll: 'Ver todos los proyectos',
+      title: 'Algunos proyectos que he entregado',
+      showAll: 'Ver más proyectos',
       showLess: 'Ver menos',
       items: {
         'medical-saas': {
@@ -354,8 +354,8 @@ export const messages = {
     },
     work: {
       eyebrow: 'Selected work',
-      title: "Projects I've delivered",
-      showAll: 'See all projects',
+      title: "Some of the projects I've delivered",
+      showAll: 'See more projects',
       showLess: 'Show less',
       items: {
         'medical-saas': {
