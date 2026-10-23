@@ -16,7 +16,7 @@ const stats = computed(() => [
 <template>
   <section :aria-label="t.stats.label" class="border-y border-zinc-200 bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-900/50">
     <dl class="mx-auto grid max-w-6xl grid-cols-2 gap-6 px-4 py-9 sm:px-6 lg:grid-cols-4">
-      <div v-for="stat in stats" :key="stat.label" class="flex flex-col-reverse">
+      <div v-for="stat in stats" :key="stat.label" class="flex flex-col-reverse justify-end">
         <dt class="mt-1 text-sm text-zinc-600 dark:text-zinc-400">{{ stat.label }}</dt>
         <dd class="text-4xl font-bold tracking-tight text-zinc-900 sm:text-5xl dark:text-white">{{ stat.value }}</dd>
       </div>
