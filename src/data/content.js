@@ -36,6 +36,7 @@ export const projects = [
   { id: 'invoicing-saas', tags: ['Laravel 13', 'Inertia 3', 'Multi-tenancy', 'CFDI', 'Stripe'] },
   { id: 'pawn-shop', tags: ['Laravel', 'MySQL', 'Real-time'] },
   { id: 'campaign', tags: ['Laravel', 'Vue', 'Pusher', 'Laravel Echo', 'Redis', 'SMS'] },
+  { id: 'siaf', tags: ['Laravel', 'MySQL', 'Bootstrap'] },
 ]
 
 export const stack = [
@@ -196,6 +197,13 @@ export const messages = {
           problem: 'Una campaña electoral necesitaba organizar a su equipo en territorio y dar seguimiento a miles de registros.',
           solution:
             'Plataforma para administrar miles de registros organizados por zona, encuestas, metas con avance y un tablero para el día de la elección con notificaciones en tiempo real y envío de SMS.',
+        },
+        siaf: {
+          category: 'Gobierno · Administración interna',
+          title: 'Sistema integral de administración y finanzas',
+          problem: 'Un instituto estatal de cultura necesitaba controlar en un solo lugar sus recursos humanos, materiales y financieros.',
+          solution:
+            'Expedientes de personal con gafetes, asistencia y licencias; inventarios y resguardos; presupuestos por proyecto con gastos y saldos; viáticos y correspondencia interna sin papel.',
         },
       },
     },
@@ -400,6 +408,13 @@ export const messages = {
           problem: 'An electoral campaign needed to organize its field team and keep track of thousands of records.',
           solution:
             'Platform to manage thousands of records organized by zone, surveys, goals with progress tracking and an election-day dashboard with real-time notifications and SMS messaging.',
+        },
+        siaf: {
+          category: 'Government · Internal administration',
+          title: 'Administration and finance system',
+          problem: 'A state cultural institute needed one place to manage its human, material and financial resources.',
+          solution:
+            'Staff records with ID badges, attendance and leave; inventory and asset custody; budgets by project with expenses and balances; travel expenses and paperless internal mail.',
         },
       },
     },
